@@ -1,0 +1,117 @@
+from typing import Sequence, TypeVar, Generic
+import os
+from pprint import pprint
+# import openpyxl
+# import pandas
+
+class Animal:
+
+    ANIMALS =[]
+    def __init__(self, name):
+        self.name = name
+
+    def getAnimals(self, *args, **kwargs):
+        return self.ANIMALS
+
+    @classmethod
+    def getAnimals(cls,*args, **kwargs):
+        return cls.ANIMALS
+
+    @staticmethod
+    def getAnimals(*args, **kwargs):
+        return Animal.ANIMALS
+
+    def getName(self, *args, **kwargs):
+        return self.name
+
+    # @classmethod
+    # def getName(cls,*args, **kwargs):
+    #     return cls.name
+
+    # @staticmethod
+    # def getName(*args, **kwargs):
+    #     return Animal.name
+
+dog = Animal("犬")
+pprint(dog.name)
+cat = Animal("猫")
+pprint(cat.name)
+
+dog.ANIMALS.append("dog")
+pprint(dog.ANIMALS)
+pprint(cat.ANIMALS)
+
+Animal.ANIMALS.append("snake")
+pprint(cat.ANIMALS)
+
+pprint(dog.getAnimals())
+pprint(Animal.getAnimals())
+pprint(Animal.getAnimals())
+
+pprint(cat.getName())
+#pprint(Animal.getName())
+#pprint(Animal.getName())
+
+
+
+xls_file = os.path.dirname(os.path.abspath(__file__)) + "/03_奨励資格受験申込書.xls"
+pprint(xls_file)
+
+# file='files/'
+
+# openpyxl.load_workbook()
+
+input_file = "03_奨励資格受験申込書.xls"
+
+# import List
+######################
+# ジェネリクス
+######################
+TT = TypeVar('TTT')
+
+def first(t:TT) -> TT:
+    t.add('hi')
+    return t
+
+
+class typeT(Generic[TT]):
+
+    def __init__(self, member:str):
+        self.member = []
+        if member is not None:
+            self.member.append(member)
+        print(member)
+
+    def add(self, member:str):
+        self.member = member
+        print("added")
+
+    def __del__(self):
+         print('del')
+t = typeT('hello')
+
+print(first(t))
+
+######################
+# ジェネリクス
+######################
+y = 20
+y += 10
+print(y)
+
+class factory:
+    def __init__(self):
+        self.x = 1
+        self.y = 3
+
+    def finder(self, *args, **kwargs):
+        self.finder2(kwargs['name'], kwargs['id'])
+
+    def finder2(self, name, id):
+        a = locals()
+        print(a)
+        # print(**locals())
+        print('id:{id} name:{name}'.format_map(a))
+
+f = factory()
+f.finder(name='test', id=1)

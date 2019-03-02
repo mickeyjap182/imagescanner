@@ -1,0 +1,49 @@
+{'name': 'hello', 'items': ['apple', 'banana', 'citras', 'dinner', '日本語']}
+{'name': 'hello', 'items': ['apple', 'banana', 'citras', 'dinner', '日本語']}
+{'name': 'hello', 'items': ['apple', 'banana', 'citras', 'dinner', '日本語']}
+<QuerySet [<Question: Question object (1)>]>
+[<Question: Question object (1)>]
+Question object (1)
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+ヤマトカブトムシの好きな食べ物は？
+好きなカブトムシは？
+好きなカブトムシは
+好きなカブトムシは
+<script>alert('xss');</script>">waa
+好きなカブトムシは
+<script>alert('xss');</script>">waa
+{'name': 'detail', 'item': <Question: Question object (1)>}
+{'name': 'detail', 'item': <Question: Question object (1)>}
+{'name': 'detail', 'item': <Question: Question object (1)>}
+{'name': 'detail', 'item': <Question: Question object (1)>}
+{'name': 'detail', 'item': <Question: Question object (2)>}
+{'name': 'detail', 'item': <QuerySet [<Question: Question object (1)>]>}
+{'name': 'detail', 'item': <QuerySet [<Question: Question object (1)>]>}
+{'name': 'detail', 'item': <QuerySet [<Question: Question object (2)>]>}
+{'name': 'detail', 'item': <QuerySet []>}
+{'name': 'detail', 'item': <QuerySet []>}
+{}
+[<Question: Question object (1)>]
+[<Question: Question object (1)>]
+Question object (1)
+<QuerySet [<Choice: Choice object (1)>]>
+SELECT `choice`.`id`, `choice`.`question_id`, `choice`.`choice_text`, `choice`.`votes` FROM `choice` WHERE `choice`.`question_id` = 1
+SELECT `choice`.`id`, `choice`.`question_id`, `choice`.`choice_text`, `choice`.`votes` FROM `choice` WHERE `choice`.`question_id` = 1
+SELECT `choice`.`id`, `choice`.`question_id`, `choice`.`choice_text`, `choice`.`votes` FROM `choice` WHERE `choice`.`question_id` = 1
+((0, 'フリーフォーマット'), (1, '多岐選択式'))
+((0, 'フリーフォーマット'), (1, '多岐選択式'))
+((0, 'フリーフォーマット'), (1, '多岐選択式'))
+((0, 'フリーフォーマット'), (1, '多岐選択式'))
+((0, 'フリーフォーマット'), (1, '多岐選択式'))
+sample
+{'name': 'detail'}
+{'name': 'detail'}
+{'name': 'detail'}
+{'name': 'detail'}

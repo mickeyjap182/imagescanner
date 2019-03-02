@@ -1,0 +1,20 @@
+
+class Car:
+    def __init__(self):
+        self.tire = 'ブリジストン'
+        self.body = '作る話'
+
+    def show(self):
+        print(self.tire)
+
+
+f = frozenset(['a','b','c'])
+r = f.union(['c', 'd'])
+print(f)
+
+
+import os
+import pandas
+
+file = os.getcwd() + '/files/sample.csv'
+df = pandas.read_csv(file, header=None)

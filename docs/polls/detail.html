@@ -1,0 +1,41 @@
+{% extends "../header.html" %}
+{% block body  %}
+{% load common_tags %}
+        {% summer "管理者"  %}
+        test:{{name}}
+        <br>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>詳細</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>{{ header.question.id }}</th>
+                    <th>{{ header.question.question_text}}</th>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>回答選択肢</th>
+                    <th>回答内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+            {% for i in items %}
+                    <td>
+                    {{ i.choice_text }}
+                    </td>
+                    <td>
+                    {{ i.votes }}
+                    </td>
+                    </tr>
+                </th>
+            {% endfor %}
+        </tbody>
+        <br>
+<a href="{% url 'index'  %}">戻る</a></div>
+{% endblock %}

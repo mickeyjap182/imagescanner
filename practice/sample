@@ -1,0 +1,19 @@
+import random
+
+members = [
+    '白見',
+    # '藤田',
+    '飯田',
+    '井出',
+    '島田',
+    '西浦',
+    # '井口',
+    # '鈴木',
+]
+print(members[random.randint(0,len(members) -1)])
+
+print(members[-4:-1])
+
+fn = (lambda x: [ n + 2 for n in range(x, x + 2)])
+
+print(fn(2))

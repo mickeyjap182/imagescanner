@@ -1,0 +1,86 @@
+{% extends "../header.html" %}
+{% block title %}
+<div>ヘッダ</div>
+{% endblock %}
+{% block body  %}
+{% load common_tags %}
+        {% summer "管理者"  %}
+        <div id="admin_title">test:{{name}}</div>
+        <br>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>質問</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for contents in items %}
+                <tr>
+                    <td>
+                        <a href="{% url 'detail' contents.id %}">{{contents.id}}</a><br>
+                    </td>
+                    <td>
+                    {{contents.question_text}}<br>
+                    </td>
+                    {% if contents == 'banana' %}
+                    美味しい<br>
+                    {% endif %}
+                    </tr>
+                </th>
+            {% endfor %}
+        </tbody>
+        <br>
+  <div class="send_form">
+  <form method="post" name="title_frm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!--<input type="text" required="" name="username" maxlength="150" id="id_username" autofocus="">-->
+    <button type="submit">Title is</button>
+  </form>
+  </div>
+{% block javascript %}
+  <script>
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+  
+    $("#id_username").change(function () {
+      console.log( $(this).val() );
+      var username = $(this).val();
+
+      $.ajax({
+        url: '{% url 'detail' 1 %}',
+        data: {
+          'username': username
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function (data) {
+          if (data.title) {
+            alert(data.title);
+            $("#admin_title").text(data.title)
+          }
+        }
+      });
+        return false;
+
+    });
+  </script>
+{% endblock %}
+{% endblock %}
